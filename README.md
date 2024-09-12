@@ -4,19 +4,20 @@ A simple open source .NET Web Application implementing rudimentary product manag
 
 # Features
 
-This application demostrates key .NET features including:
+This application demonstrates key .NET features including:
 
 * ASP.NET Core Identity (individual accounts)
 * Role based access to resources (only users with Administrator role can create, edit or delete products)
 * Seeding initial data with migrations
 * Sample Razor pages UI
 * Sample REST APIs (controllers and services)
-* Sample front-end (using APIs) using [RESTool] (https://github.com/dsternlicht/RESTool)
-* Unit test with DI (database context)
+* Sample front-end (using APIs) using [RESTool](https://github.com/dsternlicht/RESTool)
+* Unit tests with DI (database context)
 
 # Build and deploy
 
-To run locally, first run database migrations: 
+
+To run locally, first run database migrations:
 
 ```
 dotnet ef database update                
