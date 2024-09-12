@@ -5,9 +5,11 @@ namespace SampleProductManagementApp.Services.Tests
     [TestClass()]
     public class ProductServicesTests
     {
+        // Testing creating a product using a service
         [TestMethod()]
         public void CreateProductTest()
         {
+            // Creating Database Context for DI
             DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .EnableSensitiveDataLogging()
@@ -30,7 +32,7 @@ namespace SampleProductManagementApp.Services.Tests
             Assert.AreEqual("Test Product", productServices.GetAllProducts().First().Name);
         }
 
-
+        // Testing updating a created product
         [TestMethod()]
         public void UpdateProductTest()
         {
@@ -65,7 +67,7 @@ namespace SampleProductManagementApp.Services.Tests
             Assert.AreEqual("Updated Description", productServices.GetAllProducts().First().Description);
         }
 
-
+        // Testing deleted a newly added product
         [TestMethod()]
         public void DeleteProductTest()
         {
@@ -105,6 +107,7 @@ namespace SampleProductManagementApp.Services.Tests
 
         }
 
+        // Testing product retrival by Id
         [TestMethod()]
         public void GetProductTest()
         {

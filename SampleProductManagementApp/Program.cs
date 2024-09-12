@@ -17,13 +17,14 @@ namespace SampleProductManagementApp
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-
+            // Add Identity with Roles
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddScoped<IProductServices, ProductServices>();
 
+            // Set Policy for Page Protection
             builder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("admin", policy =>
@@ -31,6 +32,7 @@ namespace SampleProductManagementApp
                     );
             });
 
+            // Protect Pages
             builder.Services.AddRazorPages( options =>
             {
                 options.Conventions.AuthorizePage("/Index");
