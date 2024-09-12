@@ -20,7 +20,8 @@ This application demonstrates key .NET features including:
 To run locally, first run database migrations:
 
 ```
-dotnet ef database update                
+dotnet ef migrations add InitDatabase
+dotnet ef database update
 ```
 
 This will create local database, schema and seed default user with Administrator role (admin@website.test/Password!123). 
