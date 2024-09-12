@@ -1,0 +1,97 @@
+{
+  "name": "Product API Test",
+  "favicon": "",
+  "baseUrl": "https://localhost:8080/api",
+  "pages": [
+    {
+      "name": "Products",
+      "id": "product",
+      "description": "Manage Products.",
+      "methods": {
+        "getAll": {
+          "label": "Get All Products",
+          "dataPath": "",
+          "url": "/Products",
+          "display": {
+            "type": "table"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "text",
+              "label": "ID"
+            },
+            {
+              "name": "name",
+              "type": "text",
+              "label": "Name"
+            },
+            {
+              "name": "price",
+              "type": "text",
+              "label": "Price"
+            },
+            {
+              "name": "description",
+              "type": "text",
+              "label": "Description"
+            }
+          ]
+        },
+        "getSingle": {
+          "url": "/Products/:id",
+          "queryParams": [],
+          "requestHeaders": {}
+        },
+        "put": {
+          "url": "/Products/:id",
+          "fields": [
+            {
+              "name": "id",
+              "type": "text",
+              "label": "ID"
+            },
+            {
+              "name": "name",
+              "type": "text",
+              "label": "Name"
+            },
+            {
+              "name": "description",
+              "type": "text",
+              "label": "Description"
+            },
+            {
+              "name": "price",
+              "type": "number",
+              "label": "Price"
+            }
+          ]
+        },
+        "post": {
+          "url": "/Products",
+          "fields": [
+            {
+              "name": "name",
+              "type": "text",
+              "label": "Name"
+            },
+            {
+              "name": "description",
+              "type": "text",
+              "label": "Description"
+            },
+            {
+              "name": "price",
+              "type": "number",
+              "label": "Price"
+            }
+          ]
+        },
+        "delete": {
+          "url": "/Products/:id"
+        }
+      }
+    }
+  ]
+}
